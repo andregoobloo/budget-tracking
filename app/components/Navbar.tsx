@@ -12,7 +12,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <div className="flex justify-between mx-8 mt-4">
+    <div className="flex border-separate border-b-2 justify-between px-8 mt-4 pb-4">
       <Logo />
       <div className="flex gap-4">
         {links.map((link) => (

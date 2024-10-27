@@ -101,14 +101,14 @@ export default function TransactionDialog({ trigger, type }: Props) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            Add a new{" "}
+            {/* Add a new{" "} */}
             <span
               className={cn(
                 "m-1",
-                type === "income" ? "text-emerald-500" : "text-red-500"
+                type === "income" ? "text-emerald-600" : "text-rose-600"
               )}
             >
-              {type}
+              Add a new {type === "income" ? "income" : "expense"}
             </span>
           </DialogTitle>
         </DialogHeader>

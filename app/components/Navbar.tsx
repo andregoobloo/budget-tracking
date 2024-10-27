@@ -2,17 +2,16 @@ import Logo from "./Logo";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import NavbarItem from "./NavbarItem";
 import ThemeSwitchBtn from "./ThemeSwitchBtn";
-// import ThemeSwitchBtn from "./ThemeSwitchBtn";
 
 const links = [
   { label: "Home", link: "/" },
   { label: "Transactions", link: "/transactions" },
-  { label: "Account", link: "/account" },
+  { label: "Manage", link: "/manage" },
 ];
 
 export default function Navbar() {
   return (
-    <div className="flex border-separate border-b-2 justify-between px-8 mt-4 pb-4">
+    <div className="flex border-separate border-b-2 justify-between px-8 mt-6 pb-4">
       <Logo />
       <div className="flex gap-4">
         {links.map((link) => (

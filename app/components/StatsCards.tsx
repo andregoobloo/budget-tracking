@@ -42,7 +42,7 @@ export default function StatsCards({ from, to, userSettings }: Props) {
           value={income}
           title="Income"
           icon={
-            <TrendingUp className="h-12 w-12 items-center rounded-lg p-2 text-emerald-500 bg-emerald-400/10" />
+            <TrendingUp className="h-12 w-12 items-center rounded-lg p-2 text-emerald-800 bg-emerald-400/10" />
           }
         />
       </SkeletonWrapper>
@@ -50,9 +50,9 @@ export default function StatsCards({ from, to, userSettings }: Props) {
         <StatCard
           formatter={formatter}
           value={expense}
-          title="Expense"
+          title="Expenses"
           icon={
-            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-red-500 bg-red-400/10" />
+            <TrendingDown className="h-12 w-12 items-center rounded-lg p-2 text-rose-800 bg-red-400/10" />
           }
         />
       </SkeletonWrapper>
@@ -62,7 +62,7 @@ export default function StatsCards({ from, to, userSettings }: Props) {
           value={balance}
           title="Balance"
           icon={
-            <Wallet className="h-12 w-12 items-center rounded-lg p-2 text-sky-500 bg-sky-400/10" />
+            <Wallet className="h-12 w-12 items-center rounded-lg p-2 text-sky-800 bg-sky-400/10" />
           }
         />
       </SkeletonWrapper>
@@ -90,7 +90,7 @@ function StatCard({
   return (
     <Card className="flex h-24 w-full items-center gap-2 p-4">
       {icon}
-      <div className="flex felx-col items-center">
+      <div className="flex flex-col items-center">
         <p className="text-muted-foreground">{title}</p>
         <CountUp
           preserveValue
@@ -98,7 +98,7 @@ function StatCard({
           end={value}
           decimals={2}
           formattingFn={formatFn}
-          className="text-2xl"
+          className="text-xl"
         />
       </div>
     </Card>

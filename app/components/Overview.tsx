@@ -1,7 +1,7 @@
 "use client";
 
 import { UserSettings } from "@prisma/client";
-import { differenceInDays, startOfMonth } from "date-fns";
+import { differenceInDays, startOfYear } from "date-fns";
 import { useState } from "react";
 import { DateRangePicker } from "./DateRangePicker";
 import { MAX_DATE_RANGE_DAYS } from "../lib/constants";
@@ -15,13 +15,13 @@ export default function Overview({
   userSettings: UserSettings;
 }) {
   const [dateRange, setDateRange] = useState<{ from: Date; to: Date }>({
-    from: startOfMonth(new Date()),
+    from: startOfYear(new Date()),
     to: new Date(),
   });
   return (
     <>
-      <div className="container flex flex-wrap items-center justify-between gap-2 py-6 px-6">
-        <h2 className="text-3xl font-bold">Overview</h2>
+      <div className="flex flex-wrap items-center justify-between py-10">
+        <h2 className="text-4xl font-bold">Overview</h2>
         <DateRangePicker
           initialDateFrom={dateRange.from}
           initialDateTo={dateRange.to}
@@ -41,17 +41,19 @@ export default function Overview({
           }}
         />
       </div>
-      <div className="px-6">
+      <div>
         <StatsCards
           userSettings={userSettings}
           from={dateRange.from}
           to={dateRange.to}
         />
-        <StatCategories
-          userSettings={userSettings}
-          from={dateRange.from}
-          to={dateRange.to}
-        />
+        <div className="mt-6">
+          <StatCategories
+            userSettings={userSettings}
+            from={dateRange.from}
+            to={dateRange.to}
+          />
+        </div>
       </div>
     </>
   );

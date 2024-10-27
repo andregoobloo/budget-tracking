@@ -22,7 +22,7 @@ export default function TransactionsPage() {
         <div className="border-b bg-card w-full">
           <div className=" flex flex-wrap items-center justify-between gap-6 py-8">
             <div>
-              <p className="text-3xl font-bold">Transactions History</p>
+              <p className="text-3xl font-bold">Transaction History</p>
             </div>
             <DateRangePicker
               initialDateFrom={dateRange.from}

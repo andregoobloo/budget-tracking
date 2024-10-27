@@ -70,9 +70,9 @@ function CategoryList({ type }: { type: TransactionType }) {
           <CardTitle className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-2">
               {type === "expense" ? (
-                <TrendingDown className="h-12 w-12 items-center rounded-lg bg-red-400/10 p-2 text-red-500" />
+                <TrendingDown className="h-12 w-12 items-center rounded-lg bg-red-400/10 p-2 text-rose-800" />
               ) : (
-                <TrendingUp className="h-12 w-12 items-center rounded-lg bg-emerald-400/10 p-2 text-emerald-500" />
+                <TrendingUp className="h-12 w-12 items-center rounded-lg bg-emerald-400/10 p-2 text-emerald-800" />
               )}
               <div>
                 <h3>{type === "income" ? "Income" : "Expense"} Categories</h3>
@@ -83,7 +83,7 @@ function CategoryList({ type }: { type: TransactionType }) {
               type={type}
               successCallBack={() => categoriesQuery.refetch()}
               trigger={
-                <Button className="gap-2 text-sm">
+                <Button variant="outline" className="gap-2 text-sm">
                   <PlusSquare className="h-4 w-4" />
                   Create category
                 </Button>
@@ -93,7 +93,7 @@ function CategoryList({ type }: { type: TransactionType }) {
         </CardHeader>
         <Separator />
         {!dataAvailible && (
-          <div className="flex h-40 w-full flex-col items-center">
+          <div className="flex h-40 w-full flex-col items-center justify-center">
             <p>No {type} categories yet</p>
             <p className="text-muted-foreground text-sm">
               Create one to get started

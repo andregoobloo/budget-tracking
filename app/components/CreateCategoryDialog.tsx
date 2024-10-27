@@ -186,13 +186,17 @@ export default function CreateCategoryDialog({
           <DialogClose asChild>
             <Button
               type="button"
-              variant={"secondary"}
+              variant={"outline"}
               onClick={() => form.reset()}
             >
               Cancel
             </Button>
           </DialogClose>
-          <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
+          <Button
+            variant={"secondary"}
+            onClick={form.handleSubmit(onSubmit)}
+            disabled={isPending}
+          >
             {!isPending && "Save"}
             {isPending && <Loader2 className="animate-spin" />}
           </Button>
